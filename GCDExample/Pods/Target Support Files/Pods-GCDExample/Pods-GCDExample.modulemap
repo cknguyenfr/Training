@@ -1,0 +1,6 @@
+framework module Pods_GCDExample {
+  umbrella header "Pods-GCDExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
