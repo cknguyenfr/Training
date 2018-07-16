@@ -12,32 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tblInfo: UITableView!
     
-    var data : [String] = [String]()
+    var data : [GitInfo] = [GitInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("start")
-        DispatchQueue.global(qos: .userInitiated).async {
-            let group = DispatchGroup()
-            DispatchQueue.global().async {
-                group.enter()
-                print("Task A done")
-                group.leave()
-            }
-            DispatchQueue.global().async {
-                group.enter()
-                print("Task B done")
-                group.leave()
-            }
-            group.wait(timeout: DispatchTime.now() + 5)
-            group.notify(queue: DispatchQueue.main, execute: {
-                print("end")
-            })
-        }
+        self.tblInfo.estimatedRowHeight = 80
+        self.tblInfo.rowHeight = UITableViewAutomaticDimension
+        self.tblInfo.separatorStyle = .none
+        let router = APIRouter()
+        router.delegate = self
+        router.getInfoFromGitAPI()
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
@@ -51,7 +40,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GitInfoCell") as? GitInfoCell else {
             return UITableViewCell()
         }
-        
+        cell.lblName.text = data[indexPath.row].name
+        cell.lblDescription.text = (data[indexPath.row].description == nil) ? " " : data[indexPath.row].description!
+        cell.lblOwnerID.text = (data[indexPath.row].ownerID == nil) ? "" : String(data[indexPath.row].ownerID!)
         return cell
+    }
+}
+extension ViewController: APIRouterDelegate{
+    func completionWithData(data: [GitInfo]) {
+        DispatchQueue.main.async {
+            self.data = data
+            self.tblInfo.reloadData()
+        }
     }
 }

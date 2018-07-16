@@ -16,6 +16,7 @@
 		1B6C285A20FC342900DF467B /* GCDExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C285920FC342900DF467B /* GCDExampleUITests.swift */; };
 		1B6C286820FC71B000DF467B /* GitInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C286720FC71B000DF467B /* GitInfoCell.swift */; };
 		1B6C286A20FC72D200DF467B /* GitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C286920FC72D200DF467B /* GitInfo.swift */; };
+		1B6C286C20FC787E00DF467B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C286B20FC787E00DF467B /* APIRouter.swift */; };
 		2744CA3764FD6178915D1980 /* Pods_GCDExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DD0138EEB33901841EB05 /* Pods_GCDExampleUITests.framework */; };
 		C2EED2FF1E021EA0000144B7 /* Pods_GCDExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C93BEF90C425E09BF3D7CD /* Pods_GCDExampleTests.framework */; };
 		E55967BA3723EDCADA4A6EA7 /* Pods_GCDExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F774D5E8F90294BBF11528 /* Pods_GCDExample.framework */; };
@@ -57,6 +58,7 @@
 		1B6C285B20FC342900DF467B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B6C286720FC71B000DF467B /* GitInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInfoCell.swift; sourceTree = "<group>"; };
 		1B6C286920FC72D200DF467B /* GitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInfo.swift; sourceTree = "<group>"; };
+		1B6C286B20FC787E00DF467B /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		28C93BEF90C425E09BF3D7CD /* Pods_GCDExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GCDExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96637EA59D3545E4BCC5BA78 /* Pods-GCDExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCDExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GCDExampleTests/Pods-GCDExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF639E42A34FE47B431CF933 /* Pods-GCDExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCDExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GCDExampleTests/Pods-GCDExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				1B6C283920FC342700DF467B /* AppDelegate.swift */,
 				1B6C283B20FC342700DF467B /* ViewController.swift */,
+				1B6C286B20FC787E00DF467B /* APIRouter.swift */,
 				1B6C286920FC72D200DF467B /* GitInfo.swift */,
 				1B6C283D20FC342700DF467B /* Main.storyboard */,
 				1B6C286720FC71B000DF467B /* GitInfoCell.swift */,
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B6C286A20FC72D200DF467B /* GitInfo.swift in Sources */,
+				1B6C286C20FC787E00DF467B /* APIRouter.swift in Sources */,
 				1B6C283C20FC342700DF467B /* ViewController.swift in Sources */,
 				1B6C283A20FC342700DF467B /* AppDelegate.swift in Sources */,
 				1B6C286820FC71B000DF467B /* GitInfoCell.swift in Sources */,
@@ -561,7 +565,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG5F9H52Q8;
 				INFOPLIST_FILE = GCDExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shin.GCDExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -577,7 +584,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG5F9H52Q8;
 				INFOPLIST_FILE = GCDExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shin.GCDExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -594,7 +604,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG5F9H52Q8;
 				INFOPLIST_FILE = GCDExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shin.GCDExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -612,7 +626,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG5F9H52Q8;
 				INFOPLIST_FILE = GCDExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shin.GCDExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -629,7 +647,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG5F9H52Q8;
 				INFOPLIST_FILE = GCDExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shin.GCDExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -646,7 +668,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG5F9H52Q8;
 				INFOPLIST_FILE = GCDExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shin.GCDExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

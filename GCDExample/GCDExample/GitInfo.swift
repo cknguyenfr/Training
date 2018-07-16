@@ -7,7 +7,22 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class GitInfo: NSObject {
-
+class GitInfo: Mappable {
+    var id : Int?
+    var name : String?
+    var ownerID : Int?
+    var description : String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        description <- map["description"]
+        ownerID <- map["owner.id"]
+    }
 }
